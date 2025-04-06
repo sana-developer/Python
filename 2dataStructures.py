@@ -2,30 +2,37 @@
 List
 A list is ordered and mutable(can be changed)
 """
-fruits=["apple","banana","grapes","cherry"]
-#access element
-print(fruits[2]);
+# Create a list
+fruits = ["apple", "banana", "cherry"]
 
-#add and remove elements
-fruits.append("oranges")
-fruits.remove("cherry")
+# Access elements
+print(fruits[0])  # Output: apple
 
-#loop through a list
+# Add and remove items
+fruits.append("orange")  # Add at the end
+fruits.remove("banana")  # Remove an item
+print(fruits)
+
+# Loop through a list
 for fruit in fruits:
     print(f"I like {fruit}")
 
 
+
 #Tuple: a tuple is immutable(cannot be changed)
+# Create a tuple
+dimensions = (1920, 1080)
 
-#create a tuple
-dimensions = (1400,3489)
+# Access elements
+print(dimensions[0])  # Output: 1920
 
-#access elements
-print(dimensions[0])
+# Tuples cannot be modified!
+# dimensions[0] = 1280  # This will raise an error
 
 
 #dictionary: stores key/value pairs
 
+#create a dictionary
 student = {
     "name": "Sana",
     "age": 21,
@@ -33,7 +40,9 @@ student = {
 }
 
 #accessing values
-print(student["age"])
+print(student["name"])  # Output: Sana
+print(student["skills"][0])  # Output: c++
+print(student.get("age"))  # Output: 21 (using get method)
 
 #add/update key/value pair
 student["degree"] = "Bachlors in software engineering"

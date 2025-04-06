@@ -1,5 +1,14 @@
 #List Comprehension : A concise way to create lists
 
+# Create a list of squares
+squares = [x ** 2 for x in range(1, 6)]
+print(squares)  # Output: [1, 4, 9, 16, 25]
+
+# Filter even numbers
+even_numbers = [x for x in range(10) if x % 2 == 0]
+print(even_numbers)  # Output: [0, 2, 4, 6, 8]
+
+
 # Practice:
 # Try this one:
 
@@ -12,8 +21,31 @@ print(cubes)
 odd_Num = [x for x in range(0,16) if x%2 != 0]
 print(odd_Num)
 
+# Functions with arguments
+
+# Expand functions to use default values, *args, and **kwargs.
+
+# Function with default arguments
+def greet(name, message="Hello"):
+    return f"{message}, {name}!"
+
+print(greet("Sana"))  # Output: Hello, Sana!
+print(greet("Sana", "Welcome"))  # Output: Welcome, Sana!
+
+# Using *args
+def sum_numbers(*args):
+    return sum(args)
+
+print(sum_numbers(1, 2, 3, 4))  # Output: 10
+
+# Using **kwargs
+def show_profile(**kwargs):
+    for key, value in kwargs.items():
+        print(f"{key}: {value}")
+
+show_profile(name="Sana", age=21, skills=["Python", "C++"])
+
 """
-Functions with arguments
 Task 1: Default Arguments
 Write a function introduce_yourself that takes a name and an optional age (default is 18). The function should return:
 "My name is {name}, and I am {age} years old."
@@ -24,7 +56,7 @@ def introduce_yourself(name,age=18):
 introduce_yourself("Sana")
 
 """
-*args: variable length arguments(the arguments are collected in a tuple)
+*args: variable length arguments(the arguments are collected in a tuple(immutable))
 
 Task 2: *args
 Write a function multiply_numbers(*args) that multiplies all the numbers passed to it and returns the result.
@@ -51,6 +83,9 @@ def student_info(**kwargs):
         print(f"{key}: {value}")
 
 student_info(name="Sana",age=21,grade="A",skills=["c++","python"])
+
+
+
 """
 Task 4: Error Handling
 Write a program that:

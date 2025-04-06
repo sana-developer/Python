@@ -1,14 +1,17 @@
 #these concepts are useful when dealing with large dataset
 
-# An iterator is an object that lets you loop through a sequence one item at a time without storing the entire sequence in memory.
+# An iterator is an object that lets you loop through a sequence, one item at a time without storing the entire sequence in memory.
 # An iterator is an object that remembers its current position and returns items one by one when we call next().
+
+# Saves memory by not storing all values at once.
 
 class EvenNumbers:
     def __init__(self,max_num):
         self.num = 0
         self.max_num = max_num
     def __iter__(self):
-        return self
+        return self # returns the iterator object itself
+    # __iter__ method is called when the iteration starts.
     def __next__(self):
         if self.num <= self.max_num:
             result = self.num

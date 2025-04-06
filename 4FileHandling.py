@@ -1,4 +1,27 @@
 """
+File Handling
+1. Reading and Writing Files
+Python allows you to work with files using the open() function.
+
+Basic Modes:
+r: Read mode (default).
+
+w: Write mode (creates a new file or overwrites an existing file).
+
+a: Append mode (adds to the file without deleting existing content).
+"""	
+
+# Writing to a file
+with open("example.txt", "w") as file:
+    file.write("Hello, Sana!\n")  # Write content to the file.
+    file.write("Welcome to Python file handling.")
+
+# Reading from a file
+with open("example.txt", "r") as file:
+    content = file.read()  # Read the entire content of the file.
+    print(content)
+
+"""
 Challenge 1: Write and Read
 Write a program that:
 Prompts the user to enter their name and age.
@@ -14,6 +37,22 @@ with open("user_data.txt","w") as file:
 with open("user_data.txt","r") as file:
     content=file.read()
     print(content)
+
+"""
+2. Error Handling with Files
+You can combine file handling with error handling to manage issues like missing files.
+"""
+
+try:
+    # Attempt to open a non-existent file
+    with open("nonexistent_file.txt", "r") as file:
+        content = file.read()
+        print(content)
+except FileNotFoundError:
+    print("Error: The file does not exist.")
+finally:
+    print("File operation completed.")
+
 
 """
 Challenge 2: Error Handling with Files
@@ -37,3 +76,6 @@ finally:
 
 
 #append a file
+with open("user_data.txt","a") as file:
+    file.write("\nThis is an appended line.")
+    

@@ -1,4 +1,6 @@
 """
+OOP organizes your code into objects and classes, making it reusable and easier to manage.
+
 Class and Object
 Self represents the instance of the class. It is used to access attributes and methods of the object (instance) within the class.
 1. For instance(object) methods (like display()), self is mandatory because the method needs to operate on the instance.
@@ -29,7 +31,7 @@ class Car:
         self.model = model
         self.year = year
     def car_info(self):
-        print(f"Car Details:\n")
+        print("Car Details:\n")
         print(f"Brand: {self.brand}\n")
         print(f"model: {self.model}\n")
         print(f"year: {self.year}\n")
@@ -40,6 +42,25 @@ toyota.car_info()
 mercedes= Car("Mercedes",2000,2024)
 mercedes.car_info()
 
+# 2. Inheritance
+# Inheritance allows one class to derive (inherit) properties and methods from another.
+
+# Base class (Parent)
+class Animal:
+    def speak(self):
+        print("I make a sound")
+
+# Derived class (Child)
+class Dog(Animal):
+    def speak(self):
+        print("I bark")
+
+# Create objects of both classes
+animal = Animal()
+dog = Dog()
+
+animal.speak()  # Output: I make a sound
+dog.speak()     # Output: I bark
 
 """
 Challenge 2: Inheritance
@@ -61,8 +82,36 @@ class Rectangle(Shape):
     def area(self):
         return self.length *self.width
 
+
 rect1 = Rectangle(10,20)
 print(rect1.area())
+
+# 3. Encapsulation
+# Encapsulation is about restricting direct access to some of an object's attributes and methods.
+
+class BankAccount:
+    def __init__(self, balance):
+        self.__balance = balance  # Private variable
+
+    def deposit(self, amount):
+        self.__balance += amount
+
+    def withdraw(self, amount):
+        if amount <= self.__balance:
+            self.__balance -= amount
+        else:
+            print("Insufficient funds")
+
+    def get_balance(self):
+        return self.__balance
+
+# Create an account
+account = BankAccount(1000)
+
+# Deposit and withdraw
+account.deposit(500)
+account.withdraw(300)
+print(account.get_balance())  # Output: 1200
 
 """
 Challenge 3: Encapsulation

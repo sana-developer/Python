@@ -1,0 +1,2 @@
+Hello, Sana!
+Welcome to Python file handling.
